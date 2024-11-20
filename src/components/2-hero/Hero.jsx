@@ -39,10 +39,18 @@ const Hero = () => {
         </p>
 
         <div className="all-icons flex">
-          <div className="icon icon-twitter"></div>
-          <div className="icon icon-instagram"></div>
-          <div className="icon icon-github"></div>
-          <div className="icon icon-linkedin"></div>
+          <a href="https://twitter.com/3MCodeSolutions" target="_blank" rel="noopener noreferrer">
+            <div className="icon icon-twitter"></div>
+          </a>
+          <a href="https://instagram.com/3mcodesolutions" target="_blank" rel="noopener noreferrer">
+            <div className="icon icon-instagram"></div>
+          </a>
+          <a href="https://github.com/3MCodeSolutions" target="_blank" rel="noopener noreferrer">
+            <div className="icon icon-github"></div>
+          </a>
+          <a href="https://linkedin.com/company/3mcodesolutions" target="_blank" rel="noopener noreferrer">
+            <div className="icon icon-linkedin"></div>
+          </a>
         </div>
       </div>
 

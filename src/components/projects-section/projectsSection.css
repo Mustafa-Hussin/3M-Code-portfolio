@@ -1,27 +1,34 @@
 .projects-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 20px;
 }
 
 .section-wrapper {
   margin-bottom: 1rem;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  background-color: var(--card);
+  background-color: var(--background);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.section-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .section-header {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 1.2rem;
+  padding: 1.5rem;
   background: none;
   border: none;
   cursor: pointer;
   transition: 0.3s;
-  gap: 1rem;
-  background-color: var(--card);
+  gap: 1.5rem;
+  background-color: var(--background);
 }
 
 .section-header:hover {
@@ -34,19 +41,33 @@
 }
 
 .section-icon {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.section-header:hover .section-icon {
+  background-color: var(--blue);
 }
 
 .section-title {
   flex: 1;
   text-align: right;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin: 0;
 }
 
 .arrow-icon {
-  font-size: 1rem;
+  font-size: 1.2rem;
   transition: transform 0.3s;
+  opacity: 0.7;
 }
 
 .arrow-icon.open {
@@ -56,7 +77,20 @@
 .section-content {
   overflow: hidden;
   background-color: var(--background);
-  border-top: 2px solid var(--blue);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+}
+
+.section-info {
+  flex: 1;
+  text-align: right;
+}
+
+.section-description {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  color: var(--subtitle);
 }
 
 /* Responsive Design */
@@ -70,10 +104,16 @@
   }
 
   .section-title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .section-icon {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .section-description {
+    font-size: 0.8rem;
   }
 }

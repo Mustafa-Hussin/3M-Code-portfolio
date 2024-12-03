@@ -13,18 +13,21 @@ const ProjectsSection = () => {
       id: "programming",
       title: "تطوير البرمجيات",
       icon: "💻",
+      description: "تطوير تطبيقات الويب والموبايل باستخدام أحدث التقنيات",
       component: Main
     },
     {
       id: "marketing",
       title: "التسويق الرقمي",
       icon: "📱",
+      description: "استراتيجيات تسويقية متكاملة لتنمية عملك على الإنترنت",
       component: DigitalMarketing
     },
     {
       id: "design",
       title: "تصميم UI/UX",
       icon: "🎨",
+      description: "تصميم واجهات مستخدم جذابة وسهلة الاستخدام",
       component: UIUX
     }
   ];
@@ -40,13 +43,22 @@ const ProjectsSection = () => {
   return (
     <div className="projects-container">
       {sections.map((section) => (
-        <div key={section.id} className="section-wrapper">
+        <motion.div 
+          key={section.id} 
+          className="section-wrapper"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <button
             className={`section-header ${openSection === section.id ? 'active' : ''}`}
             onClick={() => toggleSection(section.id)}
           >
-            <span className="section-icon">{section.icon}</span>
-            <h2 className="section-title">{section.title}</h2>
+            <div className="section-icon">{section.icon}</div>
+            <div className="section-info">
+              <h2 className="section-title">{section.title}</h2>
+              <p className="section-description">{section.description}</p>
+            </div>
             <span className={`arrow-icon ${openSection === section.id ? 'open' : ''}`}>
               ▼
             </span>
@@ -65,7 +77,7 @@ const ProjectsSection = () => {
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Main from "../3-main/Main";
 import DigitalMarketing from "../digital-marketing/DigitalMarketing";
 import UIUX from "../uiux/UIUX";
+import MobileApps from "../mobile-apps/MobileApps";
 import "./projectsSection.css";
 
 const ProjectsSection = () => {
@@ -13,13 +14,20 @@ const ProjectsSection = () => {
       id: "programming",
       title: "تطوير البرمجيات",
       icon: "💻",
-      description: "تطوير تطبيقات الويب والموبايل باستخدام أحدث التقنيات",
+      description: "تطوير تطبيقات الويب والمواقع الإلكترونية باستخدام أحدث التقنيات",
       component: Main
+    },
+    {
+      id: "mobile",
+      title: "تطبيقات الموبايل",
+      icon: "📱",
+      description: "تطوير تطبيقات Android و iOS باستخدام Flutter و React Native",
+      component: MobileApps
     },
     {
       id: "marketing",
       title: "التسويق الرقمي",
-      icon: "📱",
+      icon: "📢",
       description: "استراتيجيات تسويقية متكاملة لتنمية عملك على الإنترنت",
       component: DigitalMarketing
     },

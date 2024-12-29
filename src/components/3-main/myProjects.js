@@ -3,34 +3,125 @@ export const myProjects = [
     id: "ecommerce-platform",
     projectTitle: "E-Commerce Platform",
     description: "متجر إلكتروني متكامل مع نظام دفع وإدارة مخزون",
-    category: ["React", "Node.js", "MongoDB"],
-    imgPath: "/images/1.jpg",
+    category: ["React.js", "Node.js", "MongoDB"],
+    mainImage: "/images/projects/ecommerce/main.jpg",
+    images: [
+      {
+        path: "/images/projects/ecommerce/1.jpg",
+        caption: "الصفحة الرئيسية للمتجر"
+      },
+      {
+        path: "/images/projects/ecommerce/2.jpg",
+        caption: "صفحة المنتج"
+      },
+      {
+        path: "/images/projects/ecommerce/3.jpg",
+        caption: "لوحة التحكم"
+      }
+    ],
     liveDemo: "https://ecommerce.3mcode.com",
     github: "https://github.com/3MCode/ecommerce",
     features: [
-      "نظام إدارة المنتجات",
-      "نظام الدفع الإلكتروني",
-      "إدارة المخزون",
-      "نظام العضويات"
+      {
+        title: "نظام إدارة المنتجات",
+        description: "واجهة سهلة لإضافة وتعديل وحذف المنتجات مع دعم الصور المتعددة"
+      },
+      {
+        title: "نظام الدفع الإلكتروني",
+        description: "دعم متعدد لبوابات الدفع مع تأمين كامل للمعاملات"
+      },
+      {
+        title: "إدارة المخزون",
+        description: "متابعة مباشرة للمخزون مع تنبيهات تلقائية"
+      },
+      {
+        title: "نظام العضويات",
+        description: "إدارة كاملة للمستخدمين مع صلاحيات مختلفة"
+      }
+    ],
+    technologies: [
+      {
+        name: "React.js",
+        icon: "react",
+        color: "#61DAFB"
+      },
+      {
+        name: "Node.js",
+        icon: "node",
+        color: "#339933"
+      },
+      {
+        name: "MongoDB",
+        icon: "mongodb",
+        color: "#47A248"
+      },
+      {
+        name: "Express.js",
+        icon: "express",
+        color: "#000000"
+      }
     ],
     client: "3M Code",
     date: "2024",
-    challenge: "تطوير نظام متكامل يجمع بين سهولة الاستخدام وقوة الأداء",
-    solution: "تم استخدام أحدث التقنيات لبناء منصة سريعة وآمنة وسهلة الاستخدام"
+    challenge: "تطوير نظام متكامل يجمع بين سهولة الاستخدام وقوة الأداء مع ضمان أمان المعاملات وسرعة الاستجابة",
+    solution: "تم استخدام أحدث التقنيات لبناء منصة سريعة وآمنة وسهلة الاستخدام. تم تطبيق أفضل ممارسات الأمان وتحسين الأداء"
   },
   {
     id: "social-dashboard",
     projectTitle: "Social Media Dashboard",
     description: "لوحة تحكم لإدارة حسابات التواصل الاجتماعي",
-    category: ["React", "CSS", "API"],
-    imgPath: "/images/2.jpg",
+    category: ["React.js", "CSS", "API"],
+    mainImage: "/images/projects/social-dashboard/main.jpg",
+    images: [
+      {
+        path: "/images/projects/social-dashboard/1.jpg",
+        caption: "لوحة التحكم"
+      },
+      {
+        path: "/images/projects/social-dashboard/2.jpg",
+        caption: "تحليلات الحسابات"
+      },
+      {
+        path: "/images/projects/social-dashboard/3.jpg",
+        caption: "إدارة المنشورات"
+      }
+    ],
     liveDemo: "https://dashboard.3mcode.com",
     github: "https://github.com/3MCode/dashboard",
     features: [
-      "تحليلات متقدمة",
-      "جدولة المنشورات",
-      "تقارير الأداء",
-      "إدارة التعليقات"
+      {
+        title: "تحليلات متقدمة",
+        description: "متابعة مباشرة للأداء مع تحليلات دقيقة"
+      },
+      {
+        title: "جدولة المنشورات",
+        description: "إدارة المنشورات مع جدولة تلقائية"
+      },
+      {
+        title: "تقارير الأداء",
+        description: "تقارير دقيقة عن الأداء مع تحليلات متقدمة"
+      },
+      {
+        title: "إدارة التعليقات",
+        description: "إدارة التعليقات مع إشعارات تلقائية"
+      }
+    ],
+    technologies: [
+      {
+        name: "React.js",
+        icon: "react",
+        color: "#61DAFB"
+      },
+      {
+        name: "CSS",
+        icon: "css",
+        color: "#1572B6"
+      },
+      {
+        name: "API",
+        icon: "api",
+        color: "#009688"
+      }
     ],
     client: "3M Code",
     date: "2024",
@@ -41,15 +132,58 @@ export const myProjects = [
     id: "real-estate",
     projectTitle: "Real Estate Platform",
     description: "منصة عقارات مع خريطة تفاعلية وبحث متقدم",
-    category: ["React", "Node.js", "Maps"],
-    imgPath: "/images/3.jpg",
+    category: ["React.js", "Node.js", "Maps"],
+    mainImage: "/images/projects/real-estate/main.jpg",
+    images: [
+      {
+        path: "/images/projects/real-estate/1.jpg",
+        caption: "الخريطة التفاعلية"
+      },
+      {
+        path: "/images/projects/real-estate/2.jpg",
+        caption: "صفحة العقار"
+      },
+      {
+        path: "/images/projects/real-estate/3.jpg",
+        caption: "لوحة التحكم"
+      }
+    ],
     liveDemo: "https://realestate.3mcode.com",
     github: "https://github.com/3MCode/realestate",
     features: [
-      "خريطة تفاعلية",
-      "بحث متقدم",
-      "حجز المعاينات",
-      "نظام المراسلات"
+      {
+        title: "خريطة تفاعلية",
+        description: "متابعة مباشرة للعقارات مع خريطة تفاعلية"
+      },
+      {
+        title: "بحث متقدم",
+        description: "بحث متقدم للعقارات مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "حجز المعاينات",
+        description: "حجز المعاينات مع إشعارات تلقائية"
+      },
+      {
+        title: "نظام المراسلات",
+        description: "إدارة المراسلات مع إشعارات تلقائية"
+      }
+    ],
+    technologies: [
+      {
+        name: "React.js",
+        icon: "react",
+        color: "#61DAFB"
+      },
+      {
+        name: "Node.js",
+        icon: "node",
+        color: "#339933"
+      },
+      {
+        name: "Maps",
+        icon: "maps",
+        color: "#FFC107"
+      }
     ],
     client: "3M Code",
     date: "2024",
@@ -60,15 +194,53 @@ export const myProjects = [
     id: "educational-platform",
     projectTitle: "Educational Platform",
     description: "منصة تعليمية مع نظام إدارة المحتوى",
-    category: ["React", "Firebase"],
-    imgPath: "/images/4.jpg",
+    category: ["React.js", "Firebase"],
+    mainImage: "/images/projects/educational-platform/main.jpg",
+    images: [
+      {
+        path: "/images/projects/educational-platform/1.jpg",
+        caption: "الصفحة الرئيسية"
+      },
+      {
+        path: "/images/projects/educational-platform/2.jpg",
+        caption: "صفحة الدورة"
+      },
+      {
+        path: "/images/projects/educational-platform/3.jpg",
+        caption: "لوحة التحكم"
+      }
+    ],
     liveDemo: "https://edu.3mcode.com",
     github: "https://github.com/3MCode/education",
     features: [
-      "دورات تفاعلية",
-      "نظام الاختبارات",
-      "شهادات إتمام",
-      "منتدى للنقاش"
+      {
+        title: "دورات تفاعلية",
+        description: "دورات تفاعلية مع دعم متعدد للوسائط"
+      },
+      {
+        title: "نظام الاختبارات",
+        description: "نظام الاختبارات مع دعم متعدد للأسئلة"
+      },
+      {
+        title: "شهادات إتمام",
+        description: "شهادات إتمام مع دعم متعدد للتصاميم"
+      },
+      {
+        title: "منتدى للنقاش",
+        description: "منتدى للنقاش مع دعم متعدد للتعليقات"
+      }
+    ],
+    technologies: [
+      {
+        name: "React.js",
+        icon: "react",
+        color: "#61DAFB"
+      },
+      {
+        name: "Firebase",
+        icon: "firebase",
+        color: "#FFCA28"
+      }
     ],
     client: "3M Code",
     date: "2024",
@@ -79,15 +251,58 @@ export const myProjects = [
     id: "restaurant-management",
     projectTitle: "Restaurant Management",
     description: "نظام إدارة المطاعم وطلبات الطعام",
-    category: ["React", "Node.js", "MongoDB"],
-    imgPath: "/images/5.jpg",
+    category: ["React.js", "Node.js", "MongoDB"],
+    mainImage: "/images/projects/restaurant-management/main.jpg",
+    images: [
+      {
+        path: "/images/projects/restaurant-management/1.jpg",
+        caption: "الصفحة الرئيسية"
+      },
+      {
+        path: "/images/projects/restaurant-management/2.jpg",
+        caption: "صفحة الطلبات"
+      },
+      {
+        path: "/images/projects/restaurant-management/3.jpg",
+        caption: "لوحة التحكم"
+      }
+    ],
     liveDemo: "https://restaurant.3mcode.com",
     github: "https://github.com/3MCode/restaurant",
     features: [
-      "إدارة الطلبات",
-      "نظام المخزون",
-      "تتبع التوصيل",
-      "تقارير المبيعات"
+      {
+        title: "إدارة الطلبات",
+        description: "إدارة الطلبات مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "نظام المخزون",
+        description: "نظام المخزون مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "تتبع التوصيل",
+        description: "تتبع التوصيل مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "تقارير المبيعات",
+        description: "تقارير المبيعات مع دعم متعدد للفلاتر"
+      }
+    ],
+    technologies: [
+      {
+        name: "React.js",
+        icon: "react",
+        color: "#61DAFB"
+      },
+      {
+        name: "Node.js",
+        icon: "node",
+        color: "#339933"
+      },
+      {
+        name: "MongoDB",
+        icon: "mongodb",
+        color: "#47A248"
+      }
     ],
     client: "3M Code",
     date: "2024",
@@ -99,14 +314,52 @@ export const myProjects = [
     projectTitle: "Weather App",
     description: "تطبيق طقس متقدم مع تنبؤات وإحصائيات",
     category: ["JavaScript", "API"],
-    imgPath: "/images/6.jpg",
+    mainImage: "/images/projects/weather-app/main.jpg",
+    images: [
+      {
+        path: "/images/projects/weather-app/1.jpg",
+        caption: "الصفحة الرئيسية"
+      },
+      {
+        path: "/images/projects/weather-app/2.jpg",
+        caption: "صفحة التنبؤات"
+      },
+      {
+        path: "/images/projects/weather-app/3.jpg",
+        caption: "صفحة الإحصائيات"
+      }
+    ],
     liveDemo: "https://weather.3mcode.com",
     github: "https://github.com/3MCode/weather",
     features: [
-      "تنبؤات دقيقة",
-      "خرائط الطقس",
-      "تنبيهات",
-      "إحصائيات تاريخية"
+      {
+        title: "تنبؤات دقيقة",
+        description: "تنبؤات دقيقة مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "خرائط الطقس",
+        description: "خرائط الطقس مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "تنبيهات",
+        description: "تنبيهات مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "إحصائيات تاريخية",
+        description: "إحصائيات تاريخية مع دعم متعدد للفلاتر"
+      }
+    ],
+    technologies: [
+      {
+        name: "JavaScript",
+        icon: "javascript",
+        color: "#F7DC6F"
+      },
+      {
+        name: "API",
+        icon: "api",
+        color: "#009688"
+      }
     ],
     client: "3M Code",
     date: "2024",
@@ -117,15 +370,53 @@ export const myProjects = [
     id: "task-management",
     projectTitle: "Task Management System",
     description: "نظام إدارة المهام والمشاريع للشركات",
-    category: ["React", "Node.js"],
-    imgPath: "/images/7.jpg",
+    category: ["React.js", "Node.js"],
+    mainImage: "/images/projects/task-management/main.jpg",
+    images: [
+      {
+        path: "/images/projects/task-management/1.jpg",
+        caption: "الصفحة الرئيسية"
+      },
+      {
+        path: "/images/projects/task-management/2.jpg",
+        caption: "صفحة المهام"
+      },
+      {
+        path: "/images/projects/task-management/3.jpg",
+        caption: "لوحة التحكم"
+      }
+    ],
     liveDemo: "https://tasks.3mcode.com",
     github: "https://github.com/3MCode/tasks",
     features: [
-      "إدارة المشاريع",
-      "تتبع الوقت",
-      "التقارير",
-      "إدارة الفريق"
+      {
+        title: "إدارة المشاريع",
+        description: "إدارة المشاريع مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "تتبع الوقت",
+        description: "تتبع الوقت مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "التقارير",
+        description: "التقارير مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "إدارة الفريق",
+        description: "إدارة الفريق مع دعم متعدد للفلاتر"
+      }
+    ],
+    technologies: [
+      {
+        name: "React.js",
+        icon: "react",
+        color: "#61DAFB"
+      },
+      {
+        name: "Node.js",
+        icon: "node",
+        color: "#339933"
+      }
     ],
     client: "3M Code",
     date: "2024",
@@ -137,14 +428,52 @@ export const myProjects = [
     projectTitle: "Blog Platform",
     description: "منصة مدونات مع نظام تعليقات وتفاعل",
     category: ["Node.js", "MongoDB"],
-    imgPath: "/images/8.jpg",
+    mainImage: "/images/projects/blog-platform/main.jpg",
+    images: [
+      {
+        path: "/images/projects/blog-platform/1.jpg",
+        caption: "الصفحة الرئيسية"
+      },
+      {
+        path: "/images/projects/blog-platform/2.jpg",
+        caption: "صفحة المقال"
+      },
+      {
+        path: "/images/projects/blog-platform/3.jpg",
+        caption: "لوحة التحكم"
+      }
+    ],
     liveDemo: "https://blog.3mcode.com",
     github: "https://github.com/3MCode/blog",
     features: [
-      "نظام التعليقات",
-      "التفاعل الاجتماعي",
-      "إدارة المحتوى",
-      "نظام الإشعارات"
+      {
+        title: "نظام التعليقات",
+        description: "نظام التعليقات مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "التفاعل الاجتماعي",
+        description: "التفاعل الاجتماعي مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "إدارة المحتوى",
+        description: "إدارة المحتوى مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "نظام الإشعارات",
+        description: "نظام الإشعارات مع دعم متعدد للفلاتر"
+      }
+    ],
+    technologies: [
+      {
+        name: "Node.js",
+        icon: "node",
+        color: "#339933"
+      },
+      {
+        name: "MongoDB",
+        icon: "mongodb",
+        color: "#47A248"
+      }
     ],
     client: "3M Code",
     date: "2024",
@@ -155,15 +484,58 @@ export const myProjects = [
     id: "chat-application",
     projectTitle: "Chat Application",
     description: "تطبيق محادثة فوري مع دعم الوسائط المتعددة",
-    category: ["React", "Node.js", "Socket"],
-    imgPath: "/images/9.jpg",
+    category: ["React.js", "Node.js", "Socket"],
+    mainImage: "/images/projects/chat-application/main.jpg",
+    images: [
+      {
+        path: "/images/projects/chat-application/1.jpg",
+        caption: "الصفحة الرئيسية"
+      },
+      {
+        path: "/images/projects/chat-application/2.jpg",
+        caption: "صفحة المحادثة"
+      },
+      {
+        path: "/images/projects/chat-application/3.jpg",
+        caption: "لوحة التحكم"
+      }
+    ],
     liveDemo: "https://chat.3mcode.com",
     github: "https://github.com/3MCode/chat",
     features: [
-      "محادثات فورية",
-      "دعم الوسائط المتعددة",
-      "إدارة الجلسات",
-      "نظام الإشعارات"
+      {
+        title: "محادثات فورية",
+        description: "محادثات فورية مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "دعم الوسائط المتعددة",
+        description: "دعم الوسائط المتعددة مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "إدارة الجلسات",
+        description: "إدارة الجلسات مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "نظام الإشعارات",
+        description: "نظام الإشعارات مع دعم متعدد للفلاتر"
+      }
+    ],
+    technologies: [
+      {
+        name: "React.js",
+        icon: "react",
+        color: "#61DAFB"
+      },
+      {
+        name: "Node.js",
+        icon: "node",
+        color: "#339933"
+      },
+      {
+        name: "Socket",
+        icon: "socket",
+        color: "#8BC34A"
+      }
     ],
     client: "3M Code",
     date: "2024",
@@ -174,15 +546,53 @@ export const myProjects = [
     id: "portfolio-generator",
     projectTitle: "Portfolio Generator",
     description: "منشئ مواقع شخصية احترافية",
-    category: ["React", "CSS"],
-    imgPath: "/images/10.jpg",
+    category: ["React.js", "CSS"],
+    mainImage: "/images/projects/portfolio-generator/main.jpg",
+    images: [
+      {
+        path: "/images/projects/portfolio-generator/1.jpg",
+        caption: "الصفحة الرئيسية"
+      },
+      {
+        path: "/images/projects/portfolio-generator/2.jpg",
+        caption: "صفحة المشروع"
+      },
+      {
+        path: "/images/projects/portfolio-generator/3.jpg",
+        caption: "لوحة التحكم"
+      }
+    ],
     liveDemo: "https://portfolio.3mcode.com",
     github: "https://github.com/3MCode/portfolio",
     features: [
-      "تصميم احترافي",
-      "نظام إدارة المحتوى",
-      "التفاعل الاجتماعي",
-      "نظام الإشعارات"
+      {
+        title: "تصميم احترافي",
+        description: "تصميم احترافي مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "نظام إدارة المحتوى",
+        description: "نظام إدارة المحتوى مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "التفاعل الاجتماعي",
+        description: "التفاعل الاجتماعي مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "نظام الإشعارات",
+        description: "نظام الإشعارات مع دعم متعدد للفلاتر"
+      }
+    ],
+    technologies: [
+      {
+        name: "React.js",
+        icon: "react",
+        color: "#61DAFB"
+      },
+      {
+        name: "CSS",
+        icon: "css",
+        color: "#1572B6"
+      }
     ],
     client: "3M Code",
     date: "2024",
@@ -193,38 +603,57 @@ export const myProjects = [
     id: "fitness-tracker",
     projectTitle: "Fitness Tracker",
     description: "تطبيق متابعة اللياقة والتمارين",
-    category: ["React", "Node.js"],
-    imgPath: "/images/11.jpg",
+    category: ["React.js", "Node.js"],
+    mainImage: "/images/projects/fitness-tracker/main.jpg",
+    images: [
+      {
+        path: "/images/projects/fitness-tracker/1.jpg",
+        caption: "الصفحة الرئيسية"
+      },
+      {
+        path: "/images/projects/fitness-tracker/2.jpg",
+        caption: "صفحة التمارين"
+      },
+      {
+        path: "/images/projects/fitness-tracker/3.jpg",
+        caption: "لوحة التحكم"
+      }
+    ],
     liveDemo: "https://fitness.3mcode.com",
     github: "https://github.com/3MCode/fitness",
     features: [
-      "تتبع التمارين",
-      "نظام اللياقة",
-      "إدارة الأهداف",
-      "نظام الإشعارات"
+      {
+        title: "تتبع التمارين",
+        description: "تتبع التمارين مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "نظام اللياقة",
+        description: "نظام اللياقة مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "إدارة الأهداف",
+        description: "إدارة الأهداف مع دعم متعدد للفلاتر"
+      },
+      {
+        title: "نظام الإشعارات",
+        description: "نظام الإشعارات مع دعم متعدد للفلاتر"
+      }
+    ],
+    technologies: [
+      {
+        name: "React.js",
+        icon: "react",
+        color: "#61DAFB"
+      },
+      {
+        name: "Node.js",
+        icon: "node",
+        color: "#339933"
+      }
     ],
     client: "3M Code",
     date: "2024",
     challenge: "تطوير تطبيق متابعة اللياقة يجمع بين سهولة الاستخدام وقوة الأداء",
-    solution: "تم استخدام تقنيات متقدمة لبناء نظام تتبع التمارين وتقديم نظام اللياقة"
-  },
-  {
-    id: "movie-database",
-    projectTitle: "Movie Database",
-    description: "قاعدة بيانات أفلام مع تقييمات ومراجعات",
-    category: ["React", "API"],
-    imgPath: "/images/12.jpg",
-    liveDemo: "https://movies.3mcode.com",
-    github: "https://github.com/3MCode/movies",
-    features: [
-      "قاعدة بيانات الأفلام",
-      "نظام التقييمات",
-      "نظام المراجعات",
-      "إدارة المحتوى"
-    ],
-    client: "3M Code",
-    date: "2024",
-    challenge: "تطوير قاعدة بيانات أفلام يجمع بين سهولة الاستخدام وقوة المحتوى",
-    solution: "تم استخدام تقنيات متقدمة لبناء نظام إدارة المحتوى وتقديم نظام تقييمات"
+    solution: "تم استخدام تقنيات متقدمة لبناء نظام التمارين وتقديم تقارير دقيقة"
   }
 ];

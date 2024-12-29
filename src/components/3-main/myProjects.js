@@ -4,7 +4,7 @@ export const myProjects = [
     projectTitle: "E-Commerce Platform",
     description: "متجر إلكتروني متكامل مع نظام دفع وإدارة مخزون",
     category: ["React.js", "Node.js", "MongoDB"],
-    mainImage: "/images/projects/ecommerce/main.jpg",
+    mainImage: "./images/portfolio-website/t-shirts-React-portfolio-website/screencapture-amazon-3m-code-vercel-app-2024-12-29-08_08_10.png",
     images: [
       {
         path: "/images/projects/ecommerce/1.jpg",

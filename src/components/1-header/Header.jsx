@@ -9,14 +9,36 @@ const Header = () => {
   );
 
   useEffect(() => {
-    if (theme === "light") {
-      document.body.classList.remove("dark");
-      document.body.classList.add("light");
-    } else {
-      document.body.classList.remove("light");
-      document.body.classList.add("dark");
-    }
-  }, [theme]);
+    // تحديث حالة السمة عند تحميل الصفحة
+    const isDark = document.body.classList.contains('dark');
+    setTheme(isDark ? 'dark' : 'light');
+    
+    // تطبيق الفلتر المناسب على الصور
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      if (isDark) {
+        img.style.filter = 'brightness(0.8) contrast(1.2)';
+      } else {
+        img.style.filter = 'none';
+      }
+    });
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    document.body.classList.toggle('dark');
+    
+    // تحديث الفلتر على الصور عند تغيير السمة
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      if (newTheme === 'dark') {
+        img.style.filter = 'brightness(0.8) contrast(1.2)';
+      } else {
+        img.style.filter = 'none';
+      }
+    });
+  };
 
   return (
     <header className="flex">
@@ -50,16 +72,7 @@ const Header = () => {
       </nav>
 
       <button
-        onClick={() => {
-          // Send value to localStorage
-          localStorage.setItem(
-            "currentMode",
-            theme === "dark" ? "light" : "dark"
-          );
-
-          // Get value from localStorage
-          setTheme(localStorage.getItem("currentMode"));
-        }}
+        onClick={toggleTheme}
         className="mode flex"
       >
         <span className={theme === "dark" ? "icon-moon-o" : "icon-sun"}></span>

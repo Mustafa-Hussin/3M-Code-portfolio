@@ -842,3 +842,100 @@ h1 {
 .dark .tech-item {
   background: rgba(255, 255, 255, 0.05);
 }
+
+/* Dark Mode Adjustments */
+.dark {
+  --background-primary: #1a1a1a;
+  --background-secondary: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --border-color: #404040;
+}
+
+.dark img {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+.dark .project-image,
+.dark .profile-image,
+.dark .gallery-main img {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.dark .tech-badges {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark .tech-badge {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .project-card {
+  background: var(--background-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark .project-card:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark .gallery-main {
+  background: var(--background-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.dark .gallery-nav {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.dark .gallery-nav:hover {
+  background: var(--primary-color);
+}
+
+.dark .thumbnail {
+  border: 1px solid var(--border-color);
+  background: var(--background-secondary);
+}
+
+.dark .thumbnail.active {
+  border-color: var(--primary-color);
+}
+
+.dark .image-caption {
+  color: var(--text-secondary);
+  background: var(--background-secondary);
+}
+
+/* Fix for white backgrounds in dark mode */
+.dark .tech-icon,
+.dark .feature-icon {
+  background: var(--background-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.dark .section-card {
+  background: var(--background-secondary);
+  border: 1px solid var(--border-color);
+}
+
+/* Invert specific images in dark mode */
+.dark .logo img,
+.dark .icon img {
+  filter: invert(1) brightness(0.8);
+}
+
+/* Adjust contrast for better readability */
+.dark .project-description,
+.dark .feature-description {
+  color: var(--text-secondary);
+}
+
+/* Add subtle glow to primary elements */
+.dark .primary-button,
+.dark .tech-badge.primary {
+  box-shadow: 0 0 10px rgba(var(--primary-color-rgb), 0.3);
+}

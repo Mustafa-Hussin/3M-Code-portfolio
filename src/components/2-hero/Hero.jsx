@@ -28,7 +28,8 @@ const Hero = () => {
           transition={{ duration: 2 }}
           className="title"
         >
-          Software Engineer, Founder and Entrepreneur.
+          Software Engineer ,
+           Founder and Entrepreneur.
         </motion.h1>
 
         <p className="sub-title">
@@ -41,32 +42,32 @@ const Hero = () => {
 
         <div className="all-icons flex">
           <a
-            href="https://twitter.com/3MCodeSolutions"
+            href="https://x.com/3mcode_Software"
             target="_blank"
             rel="noopener noreferrer"
           >
             <div className="icon icon-twitter"></div>
           </a>
           <a
-            href="https://instagram.com/3mcodesolutions"
+            href="https://www.instagram.com/3mcode_software_solutions/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <div className="icon icon-instagram"></div>
           </a>
           <a
-            href="https://github.com/3MCodeSolutions"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="icon icon-github"></div>
-          </a>
-          <a
-            href="https://linkedin.com/company/3mcodesolutions"
+            href="https://www.linkedin.com/company/3m-code"
             target="_blank"
             rel="noopener noreferrer"
           >
             <div className="icon icon-linkedin"></div>
+          </a>
+          <a
+            href="https://github.com/3mcode"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="icon icon-github"></div>
           </a>
         </div>
       </div>

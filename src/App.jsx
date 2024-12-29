@@ -10,6 +10,7 @@ import Articles from "./pages/Articles";
 import Projects from "./pages/Projects";
 import Speaking from "./pages/Speaking";
 import ContactPage from "./pages/Contact";
+import ProjectDetails from "./pages/ProjectDetails";
 
 function App() {
   useEffect(() => {
@@ -42,6 +43,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetails />} />
           <Route path="/speaking" element={<Speaking />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
@@ -49,9 +51,11 @@ function App() {
         <div className="divider" />
         <Footer />
 
-        <a style={{ opacity: showScrollBTN ? 1 : 0, transition: "1s" }} href="#up">
-          <button className="icon-keyboard_arrow_up scroll2Top"></button>
-        </a>
+        {showScrollBTN && (
+          <a href="#up">
+            <button className="scroll2Top icon-keyboard_arrow_up"></button>
+          </a>
+        )}
       </div>
     </Router>
   );

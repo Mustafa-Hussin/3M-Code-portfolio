@@ -1,174 +1,162 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { myProjects } from '../components/3-main/myProjects';
 import './pages.css';
 
 const ProjectDetails = () => {
   const { id } = useParams();
+  const [project, setProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // هذه البيانات يجب أن تأتي من مصدر البيانات الخاص بك
-  const projectData = {
-    title: "عنوان المشروع",
-    description: "وصف تفصيلي للمشروع",
-    category: "تصنيف المشروع",
-    client: "اسم العميل",
-    date: "تاريخ المشروع",
-    technologies: ["React", "Node.js", "MongoDB"],
-    features: [
-      "ميزة 1",
-      "ميزة 2",
-      "ميزة 3"
-    ],
-    images: [
-      "/projects/project1-main.jpg",
-      "/projects/project1-detail1.jpg",
-      "/projects/project1-detail2.jpg"
-    ],
-    challenge: "تحديات المشروع وكيف تم حلها",
-    solution: "الحل المقدم والنتائج",
-    liveDemo: "https://example.com",
-    githubRepo: "https://github.com/example"
+  useEffect(() => {
+    const foundProject = myProjects.find(p => p.id === id);
+    setProject(foundProject);
+  }, [id]);
+
+  if (!project) {
+    return (
+      <motion.div 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        className="project-not-found"
+      >
+        <h1>المشروع غير موجود</h1>
+        <Link to="/projects" className="back-to-projects">
+          العودة إلى المشاريع
+        </Link>
+      </motion.div>
+    );
+  }
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
   };
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
       className="project-details-container"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
     >
       {/* Hero Section */}
-      <motion.div 
-        className="project-hero"
-        initial={{ y: 20 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <h1>{projectData.title}</h1>
-        <p className="project-category">{projectData.category}</p>
-      </motion.div>
-
-      {/* Main Image */}
-      <motion.div 
-        className="project-main-image"
-        initial={{ scale: 0.95 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        <img src={projectData.images[0]} alt={projectData.title} />
-      </motion.div>
-
-      {/* Project Info Grid */}
-      <div className="project-info-grid">
-        <div className="project-info-left">
-          <motion.div
-            initial={{ x: -20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            <h2>نظرة عامة</h2>
-            <p>{projectData.description}</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ x: -20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="project-features"
-          >
-            <h2>المميزات الرئيسية</h2>
-            <ul>
-              {projectData.features.map((feature, index) => (
-                <li key={index}>{feature}</li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
-
+      <div className="project-hero-section">
         <motion.div 
-          className="project-info-right"
-          initial={{ x: 20, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.4 }}
+          className="project-hero-content"
+          variants={itemVariants}
         >
-          <div className="project-meta">
-            <div className="meta-item">
-              <h3>العميل</h3>
-              <p>{projectData.client}</p>
-            </div>
-            <div className="meta-item">
-              <h3>التاريخ</h3>
-              <p>{projectData.date}</p>
-            </div>
-            <div className="meta-item">
-              <h3>التقنيات المستخدمة</h3>
-              <div className="technologies-tags">
-                {projectData.technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag">{tech}</span>
-                ))}
-              </div>
-            </div>
+          <div className="project-category-badges">
+            {project.category.map((cat, index) => (
+              <span key={index} className="category-badge">
+                {cat}
+              </span>
+            ))}
+          </div>
+          <h1>{project.projectTitle}</h1>
+          <p className="project-description">{project.description}</p>
+          <div className="project-actions">
+            {project.liveDemo && (
+              <a 
+                href={project.liveDemo} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="primary-button"
+              >
+                <span className="icon-link"></span>
+                معاينة المشروع
+              </a>
+            )}
+            {project.github && (
+              <a 
+                href={project.github} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="secondary-button"
+              >
+                <span className="icon-github"></span>
+                GitHub
+              </a>
+            )}
           </div>
         </motion.div>
       </div>
 
-      {/* Challenge & Solution */}
-      <motion.div 
-        className="project-challenge-solution"
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.5 }}
-      >
-        <div className="challenge">
-          <h2>التحدي</h2>
-          <p>{projectData.challenge}</p>
-        </div>
-        <div className="solution">
-          <h2>الحل</h2>
-          <p>{projectData.solution}</p>
-        </div>
-      </motion.div>
+      {/* Main Content */}
+      <div className="project-main-content">
+        <motion.div 
+          className="project-image-gallery"
+          variants={itemVariants}
+        >
+          <div className="main-image">
+            <img src={project.imgPath} alt={project.projectTitle} />
+          </div>
+          {/* Additional images can be added here */}
+        </motion.div>
 
-      {/* Project Gallery */}
-      <motion.div 
-        className="project-gallery"
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.6 }}
-      >
-        <h2>معرض الصور</h2>
-        <div className="gallery-grid">
-          {projectData.images.map((image, index) => (
-            <motion.div
-              key={index}
-              className="gallery-item"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img src={image} alt={`${projectData.title} - ${index + 1}`} />
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+        <div className="project-info-grid">
+          {/* Features Section */}
+          <motion.div 
+            className="project-features-section"
+            variants={itemVariants}
+          >
+            <h2>المميزات الرئيسية</h2>
+            <div className="features-grid">
+              {project.features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  className="feature-card"
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <div className="feature-icon">✨</div>
+                  <h3>{feature}</h3>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
-      {/* Project Links */}
-      <motion.div 
-        className="project-links"
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.7 }}
-      >
-        {projectData.liveDemo && (
-          <a href={projectData.liveDemo} target="_blank" rel="noopener noreferrer" className="project-link">
-            مشاهدة المشروع
-          </a>
-        )}
-        {projectData.githubRepo && (
-          <a href={projectData.githubRepo} target="_blank" rel="noopener noreferrer" className="project-link github">
-            GitHub Repository
-          </a>
-        )}
-      </motion.div>
+          {/* Technical Details */}
+          <motion.div 
+            className="project-technical-section"
+            variants={itemVariants}
+          >
+            <h2>التفاصيل التقنية</h2>
+            <div className="tech-stack">
+              {project.category.map((tech, index) => (
+                <div key={index} className="tech-item">
+                  <span className="tech-icon"></span>
+                  <span className="tech-name">{tech}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Navigation */}
+        <motion.div 
+          className="project-navigation"
+          variants={itemVariants}
+        >
+          <Link to="/projects" className="back-to-projects">
+            <span className="icon-arrow-right"></span>
+            العودة إلى المشاريع
+          </Link>
+        </motion.div>
+      </div>
     </motion.div>
   );
 };

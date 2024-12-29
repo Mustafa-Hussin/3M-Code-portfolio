@@ -364,36 +364,127 @@ h1 {
 .project-details-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
+  color: var(--text-primary);
 }
 
-.project-hero {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.project-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.project-category {
-  color: var(--text-secondary);
-  font-size: 1.2rem;
-}
-
-.project-main-image {
-  width: 100%;
-  height: 60vh;
+.project-hero-section {
+  background: var(--background-secondary);
+  padding: 4rem 2rem;
   margin-bottom: 4rem;
-  border-radius: 1rem;
+  border-radius: 0 0 2rem 2rem;
+  position: relative;
   overflow: hidden;
 }
 
-.project-main-image img {
+.project-hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, var(--primary-color) 0%, transparent 100%);
+  opacity: 0.1;
+}
+
+.project-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.project-category-badges {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.category-badge {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--text-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.project-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primary-button {
+  background: var(--primary-color);
+  color: white;
+}
+
+.secondary-button {
+  background: var(--background-primary);
+  color: var(--text-primary);
+  border: 2px solid var(--primary-color);
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-main-content {
+  padding: 0 2rem;
+}
+
+.project-image-gallery {
+  margin-bottom: 4rem;
+}
+
+.main-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .project-info-grid {
@@ -403,102 +494,123 @@ h1 {
   margin-bottom: 4rem;
 }
 
-.project-features ul {
-  list-style: none;
-  padding: 0;
+.project-features-section h2,
+.project-technical-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
 }
 
-.project-features li {
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: var(--background-secondary);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 2rem;
   margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  position: relative;
 }
 
-.project-features li:before {
-  content: "•";
-  position: absolute;
-  left: 0;
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.tech-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--background-secondary);
+  padding: 1rem;
+  border-radius: 0.8rem;
+}
+
+.tech-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+.tech-name {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.project-navigation {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.back-to-projects {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.back-to-projects:hover {
   color: var(--primary-color);
 }
 
-.project-meta .meta-item {
+.project-not-found {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.project-not-found h1 {
+  font-size: 2rem;
   margin-bottom: 2rem;
-}
-
-.project-meta h3 {
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-}
-
-.technologies-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tech-tag {
-  background: var(--background-secondary);
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  font-size: 0.9rem;
-}
-
-.project-challenge-solution {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  margin-bottom: 4rem;
-}
-
-.project-gallery {
-  margin-bottom: 4rem;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.gallery-item {
-  border-radius: 0.5rem;
-  overflow: hidden;
-  aspect-ratio: 16/9;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.project-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.project-link {
-  display: inline-block;
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-  background: var(--primary-color);
-  color: white;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-
-.project-link:hover {
-  transform: translateY(-2px);
-}
-
-.project-link.github {
-  background: var(--background-secondary);
   color: var(--text-primary);
 }
 
 /* Responsive Design */
+@media (max-width: 768px) {
+  .project-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .project-info-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-hero-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .project-main-content {
+    padding: 0 1.5rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .page-container {
     padding: 1rem;

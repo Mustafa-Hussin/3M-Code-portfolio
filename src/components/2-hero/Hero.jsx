@@ -28,27 +28,44 @@ const Hero = () => {
           transition={{ duration: 2 }}
           className="title"
         >
-          Software designer, founder, entrepreneur.
+          Software Engineer, Founder and Entrepreneur.
         </motion.h1>
 
         <p className="sub-title">
-        I’m Mustafa Hussein , a software designer and entrepreneur based in Giza Egypt 
-          City. I’m the founder and CEO of 3M Code Software Solutions , where we develop
-          technologies that empower regular people to explore space on their own
-          terms.
+           I am Mostafa Hussein, a
+          software engineer and entrepreneur based in Giza, Egypt. I am the
+          founder and CEO of 3M Code Software Solutions, where we develop
+          technologies, digital marketing and after-sales service that enable
+          people and businesses to explore brands with clear vision.
         </p>
 
         <div className="all-icons flex">
-          <a href="https://twitter.com/3MCodeSolutions" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://twitter.com/3MCodeSolutions"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="icon icon-twitter"></div>
           </a>
-          <a href="https://instagram.com/3mcodesolutions" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://instagram.com/3mcodesolutions"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="icon icon-instagram"></div>
           </a>
-          <a href="https://github.com/3MCodeSolutions" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/3MCodeSolutions"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="icon icon-github"></div>
           </a>
-          <a href="https://linkedin.com/company/3mcodesolutions" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://linkedin.com/company/3mcodesolutions"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="icon icon-linkedin"></div>
           </a>
         </div>

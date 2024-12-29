@@ -4,18 +4,18 @@ export const myProjects = [
     projectTitle: "E-Commerce Platform",
     description: "متجر إلكتروني متكامل مع نظام دفع وإدارة مخزون",
     category: ["React.js", "Node.js", "MongoDB"],
-    mainImage: "./images/portfolio-website/t-shirts-React-portfolio-website/screencapture-amazon-3m-code-vercel-app-2024-12-29-08_08_10.png",
+    mainImage: "./images/screencapture-amazon-3m-code-vercel-app-2024-12-29-08_08_10.png",
     images: [
       {
-        path: "/images/projects/ecommerce/1.jpg",
+        path: "./images/screencapture-amazon-3m-code-vercel-app-2024-12-29-08_08_10.png",
         caption: "الصفحة الرئيسية للمتجر"
       },
       {
-        path: "/images/projects/ecommerce/2.jpg",
+        path: "./images/screencapture-amazon-3m-code-vercel-app-2024-12-29-08_08_10.png",
         caption: "صفحة المنتج"
       },
       {
-        path: "/images/projects/ecommerce/3.jpg",
+        path: "./images/screencapture-amazon-3m-code-vercel-app-2024-12-29-08_08_10.png",
         caption: "لوحة التحكم"
       }
     ],

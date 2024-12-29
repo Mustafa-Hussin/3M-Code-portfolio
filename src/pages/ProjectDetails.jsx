@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useParams, Link } from 'react-router-dom';
 import { myProjects } from '../components/3-main/myProjects';
@@ -8,7 +8,9 @@ const ProjectDetails = () => {
   const { id } = useParams();
   const [project, setProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imageOrientation, setImageOrientation] = useState('landscape');
   const [theme, setTheme] = useState('light');
+  const imageRef = useRef(null);
 
   useEffect(() => {
     const foundProject = myProjects.find(p => p.id === id);
@@ -19,6 +21,21 @@ const ProjectDetails = () => {
     const isDark = document.body.classList.contains('dark');
     setTheme(isDark ? 'dark' : 'light');
   }, [id]);
+
+  useEffect(() => {
+    if (imageRef.current) {
+      const img = imageRef.current;
+      const checkOrientation = () => {
+        setImageOrientation(img.naturalWidth > img.naturalHeight ? 'landscape' : 'portrait');
+      };
+      
+      if (img.complete) {
+        checkOrientation();
+      } else {
+        img.onload = checkOrientation;
+      }
+    }
+  }, [currentImageIndex]);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => 
@@ -40,7 +57,7 @@ const ProjectDetails = () => {
         className="project-not-found"
       >
         <h1>المشروع غير موجود</h1>
-        <Link to="/" className="back-to-projects">
+        <Link to="/" className="text-link">
           العودة إلى الرئيسية
         </Link>
       </motion.div>
@@ -84,11 +101,12 @@ const ProjectDetails = () => {
 
       {/* Image Gallery */}
       <div className="project-gallery">
-        <div className="gallery-main">
+        <div className={`gallery-main ${imageOrientation}`}>
           <button className="gallery-nav prev" onClick={prevImage}>
             &#10094;
           </button>
           <motion.img
+            ref={imageRef}
             key={currentImageIndex}
             src={project.images[currentImageIndex].path}
             alt={project.images[currentImageIndex].caption}
@@ -108,7 +126,7 @@ const ProjectDetails = () => {
               className={`thumbnail ${index === currentImageIndex ? 'active' : ''}`}
               onClick={() => setCurrentImageIndex(index)}
             >
-              <img src={image.path} alt={image.caption} />
+              <img src={image.path} alt={`صورة مصغرة ${index + 1}`} />
             </div>
           ))}
         </div>
@@ -135,6 +153,30 @@ const ProjectDetails = () => {
             <h3>تاريخ التنفيذ</h3>
             <p>{project.date}</p>
           </motion.div>
+        </div>
+      </div>
+
+      {/* Tech Stack Section */}
+      <div className="tech-stack-section">
+        <h2>التقنيات المستخدمة</h2>
+        <div className="tech-stack-grid">
+          {project.technologies.map((tech, index) => (
+            <motion.div
+              key={index}
+              className="tech-item"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 + index * 0.1 }}
+            >
+              <div 
+                className="tech-icon"
+                style={{ backgroundColor: tech.color }}
+              >
+                <i className={tech.icon}></i>
+              </div>
+              <span className="tech-name">{tech.name}</span>
+            </motion.div>
+          ))}
         </div>
       </div>
 
